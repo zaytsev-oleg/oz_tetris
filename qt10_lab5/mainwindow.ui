@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>571</width>
+    <height>419</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>lab5</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="qt10_lab5.qrc">
+    <normaloff>:/pics/images/Tetris.png</normaloff>:/pics/images/Tetris.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_left">
+      <item>
+       <widget class="QLabel" name="label_next_item">
+        <property name="text">
+         <string>Next</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="NextFigure" name="next_figure" native="true">
+        <property name="rows" stdset="0">
+         <number>8</number>
+        </property>
+        <property name="cols" stdset="0">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="MyGlass" name="my_glass" native="true">
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="rows" stdset="0">
+       <number>20</number>
+      </property>
+      <property name="cols" stdset="0">
+       <number>15</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_right">
+      <item>
+       <widget class="QPushButton" name="btn_start">
+        <property name="text">
+         <string>Start</string>
+        </property>
+        <property name="icon">
+         <iconset resource="qt10_lab5.qrc">
+          <normaloff>:/icons/images/iconNewGame.ico</normaloff>:/icons/images/iconNewGame.ico</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="PauseButton" name="btn_pause">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Pause</string>
+        </property>
+        <property name="icon">
+         <iconset resource="qt10_lab5.qrc">
+          <normaloff>:/icons/images/iconInstructions.ico</normaloff>:/icons/images/iconInstructions.ico</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_exit">
+        <property name="text">
+         <string>Exit</string>
+        </property>
+        <property name="icon">
+         <iconset resource="qt10_lab5.qrc">
+          <normaloff>:/icons/images/iconExit.ico</normaloff>:/icons/images/iconExit.ico</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_1">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_score">
+        <property name="text">
+         <string>Score</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="lcd_num">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>571</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuGame">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionStart"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuGame"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionStart"/>
+   <addaction name="actionPause"/>
+   <addaction name="actionAbout"/>
+   <addaction name="actionExit"/>
+  </widget>
+  <action name="actionStart">
+   <property name="icon">
+    <iconset resource="qt10_lab5.qrc">
+     <normaloff>:/icons/images/iconNewGame.ico</normaloff>:/icons/images/iconNewGame.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="qt10_lab5.qrc">
+     <normaloff>:/icons/images/iconInfo.ico</normaloff>:/icons/images/iconInfo.ico</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="qt10_lab5.qrc">
+     <normaloff>:/icons/images/iconExit.ico</normaloff>:/icons/images/iconExit.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="icon">
+    <iconset resource="qt10_lab5.qrc">
+     <normaloff>:/icons/images/iconInstructions.ico</normaloff>:/icons/images/iconInstructions.ico</iconset>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+   <property name="toolTip">
+    <string>Pause</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyGlass</class>
+   <extends>QWidget</extends>
+   <header>myglass.h</header>
+   <container>1</container>
+   <slots>
+    <signal>signal_next_figure(MyFigure*)</signal>
+    <signal>signal_set_score(int)</signal>
+    <signal>signal_pause_btn_enabled(bool)</signal>
+    <signal>signal_game_over(int)</signal>
+    <slot>slot_start_game()</slot>
+    <slot>slot_pause_game(bool)</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>NextFigure</class>
+   <extends>QWidget</extends>
+   <header>nextfigure.h</header>
+   <container>1</container>
+   <slots>
+    <slot>slot_next_figure(MyFigure*)</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>PauseButton</class>
+   <extends>QPushButton</extends>
+   <header>pausebutton.h</header>
+   <slots>
+    <signal>signal_pause_game(bool)</signal>
+    <slot>slot_btn_enabled(bool)</slot>
+    <slot>slot_toggle_state()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="qt10_lab5.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionStart</sender>
+   <signal>triggered()</signal>
+   <receiver>my_glass</receiver>
+   <slot>slot_start_game()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_start</sender>
+   <signal>clicked()</signal>
+   <receiver>actionStart</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>479</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>my_glass</sender>
+   <signal>signal_next_figure(MyFigure*)</signal>
+   <receiver>next_figure</receiver>
+   <slot>slot_next_figure(MyFigure*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>285</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>98</x>
+     <y>61</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>my_glass</sender>
+   <signal>signal_set_score(int)</signal>
+   <receiver>lcd_num</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>285</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>471</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>my_glass</sender>
+   <signal>signal_pause_btn_enabled(bool)</signal>
+   <receiver>btn_pause</receiver>
+   <slot>slot_btn_enabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>285</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>471</x>
+     <y>83</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_pause</sender>
+   <signal>signal_pause_game(bool)</signal>
+   <receiver>my_glass</receiver>
+   <slot>slot_pause_game(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>471</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>215</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>209</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_exit</sender>
+   <signal>clicked()</signal>
+   <receiver>actionExit</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>471</x>
+     <y>136</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPause</sender>
+   <signal>triggered()</signal>
+   <receiver>btn_pause</receiver>
+   <slot>slot_toggle_state()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>471</x>
+     <y>106</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_pause</sender>
+   <signal>clicked()</signal>
+   <receiver>actionPause</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>471</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>my_glass</sender>
+   <signal>signal_game_over(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_game_over(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>285</x>
+     <y>226</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>209</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slot_game_over(int)</slot>
+ </slots>
+</ui>

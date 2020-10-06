@@ -1,0 +1,11 @@
+debug/main.o
+debug/mainwindow.o
+debug/myfigure.o
+debug/myglass.o
+debug/nextfigure.o
+debug/pausebutton.o
+debug/qrc_qt10_lab5.o
+debug/moc_mainwindow.o
+debug/moc_myglass.o
+debug/moc_nextfigure.o
+debug/moc_pausebutton.o

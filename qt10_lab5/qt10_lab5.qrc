@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>images/iconExit.ico</file>
+        <file>images/iconInfo.ico</file>
+        <file>images/iconInstructions.ico</file>
+        <file>images/iconNewGame.ico</file>
+    </qresource>
+    <qresource prefix="/pics">
+        <file>images/Tetris.png</file>
+    </qresource>
+    <qresource lang="ru" prefix="/translations">
+        <file>qt10_lab5_ru.qm</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,11 @@
+release/main.o
+release/mainwindow.o
+release/myfigure.o
+release/myglass.o
+release/nextfigure.o
+release/pausebutton.o
+release/qrc_qt10_lab5.o
+release/moc_mainwindow.o
+release/moc_myglass.o
+release/moc_nextfigure.o
+release/moc_pausebutton.o
